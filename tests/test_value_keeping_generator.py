@@ -35,6 +35,11 @@ def test_last_value_EMPTY_before_iterating():
     gen = value_keeping_generator(generator())
     assert gen.value is value_keeping_generator.EMPTY
 
+def test_value_EMPTY_after_exhausting_empty_generator():
+    gen = value_keeping_generator(iter([]))
+    list(gen)
+    assert gen.value is value_keeping_generator.EMPTY
+
 def test_last_value_returns_with_yield_from():
     def yields_from():
         last_value = yield from value_keeping_generator(generator())
