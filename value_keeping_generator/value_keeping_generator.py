@@ -2,13 +2,14 @@ import typing
 from collections.abc import Generator
 import inspect
 
-T = typing.TypeVar('T')
+T = typing.TypeVar("T")
 
 
 class value_keeping_generator(typing.Generic[T]):
     """Keeps the last value yielded."""
 
     EMPTY = object()
+
     def __init__(self, generator: Generator[T, None, None]):
         self.value = value_keeping_generator.EMPTY
         self._generator = generator

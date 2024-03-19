@@ -13,6 +13,13 @@ python = "^3.11"
 pytest = "^8.1.1"
 ruff = "^0.3.3"
 
+[tool.ruff]
+line-length = 120
+indent-width = 4
+target-version = "py311"
+output-format = "full"
+show-fixes = true
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
