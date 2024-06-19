@@ -10,6 +10,8 @@ def generator():
     yield 2
     yield 3
 
+# from https://kernprof.readthedocs.io/en/latest/_modules/kernprof.html#is_generator
+# isgen = (f.__code__.co_flags & CO_GENERATOR) != 0
 
 ic(inspect.isgenerator(generator))  # False
 ic(inspect.isfunction(generator))  # True
